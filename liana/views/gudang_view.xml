@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- liana.gudang inherit tree view -->
+    <record id="liana_gudang_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Gudang</field>
+        <field name="model">liana.gudang</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="liana_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_gudang" />
+            </xpath>          
+        </field>
+    </record>
+
+    <!-- liana.gudang inherit form view -->
+    <record id="liana_gudang_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Gudang</field>
+        <field name="model">liana.gudang</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="liana_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_gudang" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+               <attribute name="string">Address</attribute>
+            </xpath>          
+        </field> 
+    </record>
+
+    <!-- liana.gudang action window -->
+    <record id="liana_gudang_action" model="ir.actions.act_window">
+        <field name="name">Gudang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">liana.gudang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="liana_gudang_menu_act"
+        name="Gudang"
+        parent="liana_pegawai_menu_categ"
+        action="liana_gudang_action"
+        sequence="10"/>
+
+</odoo>

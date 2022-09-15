@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_liana_kelompokbarang,access.liana.kelompokbarang,model_liana_kelompokbarang,,1,1,1,1
+access_liana_barang,access.liana.barang,model_liana_barang,,1,1,1,1
+access_liana_person,access.liana.person,model_liana_person,,1,1,1,1
+access_liana_kasir,access.liana.kasir,model_liana_kasir,,1,1,1,1
+access_liana_gudang,access.liana.gudang,model_liana_gudang,,1,1,1,1
+access_liana_kebersihan,access.liana.kebersihan,model_liana_kebersihan,,1,1,1,1
+access_liana_supplier,access.liana.supplier,model_liana_supplier,,1,1,1,1
+access_liana_penjualan,access.liana.penjualan,model_liana_penjualan,,1,1,1,1
+access_liana_detailpenjualan,access.liana.detailpenjualan,model_liana_detailpenjualan,,1,1,1,1
+access_liana_barangdatang,access.liana.barangdatang,model_liana_barangdatang,,1,1,1,1

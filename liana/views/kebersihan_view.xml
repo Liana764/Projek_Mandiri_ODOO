@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- liana.kebersihan inherit tree view -->
+    <record id="liana_kebersihan_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Kebersihan</field>
+        <field name="model">liana.kebersihan</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="liana_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="id_kebersihan" />
+            </xpath>          
+        </field>
+    </record>
+
+    <!-- liana.kebersihan inherit form view -->
+    <record id="liana_kebersihan_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Kebersihan</field>
+        <field name="model">liana.kebersihan</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="liana_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//group[2]" position="after">
+                <group name="id" string="ID">
+                    <field name="id_kebersihan" />
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='alamat']" position="attributes">
+               <attribute name="string">Address</attribute>
+            </xpath>          
+        </field> 
+    </record>
+
+    <!-- liana.kebersihan action window -->
+    <record id="liana_kebersihan_action" model="ir.actions.act_window">
+        <field name="name">Kebersihan</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">liana.kebersihan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="liana_kebersihan_menu_act"
+        name="Kebersihan"
+        parent="liana_pegawai_menu_categ"
+        action="liana_kebersihan_action"
+        sequence="10"/>
+
+</odoo>
