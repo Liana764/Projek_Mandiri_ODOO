@@ -21,6 +21,7 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
+    'depends': ['base', 'report_xlsx'],
 
     # always loaded
     'data': [
